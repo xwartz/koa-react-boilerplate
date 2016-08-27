@@ -3,7 +3,9 @@
 import webpack from 'webpack'
 import baseConfig from './webpack.config.base'
 
-const port = 3000
+import globalConfig from './config'
+
+const port = globalConfig.client.port
 
 export default {
   ...baseConfig,

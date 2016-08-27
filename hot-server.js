@@ -2,11 +2,13 @@
 
 import webpack from 'webpack'
 import WebpackDevServer from 'webpack-dev-server'
-import https from 'https'
+// import https from 'https'
+
+import globalConfig from './config'
 
 import config from './webpack.config.dev'
 
-const port = 3000
+const port = globalConfig.client.port
 
 new WebpackDevServer(webpack(config), {
   contentBase: './client',
@@ -19,7 +21,7 @@ new WebpackDevServer(webpack(config), {
   },
   proxy: {
     '/api': {
-      target: 'http://localhost:4000',
+      target: `http://localhost:${globalConfig.server.port}`,
       // target: 'https://api.github.com/',
       // pathRewrite: { '^/api': '' },
       // http -> https 代理
