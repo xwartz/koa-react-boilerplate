@@ -1,6 +1,8 @@
 import React, { Component, PropTypes } from 'react'
 import { Link } from 'react-router'
 
+import './index.scss'
+
 export default class User extends Component {
   render () {
     const { login, avatarUrl, name } = this.props.user
@@ -8,8 +10,8 @@ export default class User extends Component {
     return (
       <div className="User">
         <Link to={`/${login}`}>
-          <img src={ avatarUrl } width='72' height='72' />
-          <h3>{ login } { name && <span>({ name })</span> }</h3>
+          <img src={ avatarUrl } />
+          <span>{ login } { name && <span>({ name })</span> }</span>
         </Link>
       </div>
     )

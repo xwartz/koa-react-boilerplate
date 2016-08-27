@@ -35,7 +35,6 @@ class RepoPage extends Component {
       <div>
         <Repo repo={ repo }
               owner= { owner } />
-        <hr />
         <List renderItem={ this.renderUser }
               items={ stargazers }
               onLoadMoreClick={ this.handleLoadMoreClick }

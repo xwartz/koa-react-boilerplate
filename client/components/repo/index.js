@@ -1,6 +1,8 @@
 import React, { Component, PropTypes } from 'react'
 import { Link } from 'react-router'
 
+import './index.scss'
+
 export default class Repo extends Component {
 
   render () {

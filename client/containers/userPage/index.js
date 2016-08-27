@@ -54,7 +54,6 @@ class UserPage extends Component {
     return (
       <div>
         <User user={user} />
-        <hr />
         <List renderItem={ this.renderRepo }
               items={ zip(starredRepos, starredRepoOwners) }
               onLoadMoreClick={ this.handleLoadMoreClick }
