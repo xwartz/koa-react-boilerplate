@@ -22,6 +22,12 @@ export default {
     ]
   },
 
+  output: {
+    ...baseConfig.output,
+    // Hot Module Replacement
+    publicPath: `http://localhost:${port}/`
+  },
+
   plugins: [
     ...baseConfig.plugins,
     new webpack.HotModuleReplacementPlugin(),
