@@ -2,6 +2,7 @@
 
 import webpack from 'webpack'
 import WebpackDevServer from 'webpack-dev-server'
+import https from 'https'
 
 import config from './webpack.config.dev'
 
@@ -15,6 +16,18 @@ new WebpackDevServer(webpack(config), {
   reload: true,
   stats: {
     colors: true
+  },
+  proxy: {
+    '/api': {
+      target: 'https://api.github.com/',
+      pathRewrite: { '^/api': '' },
+      // http -> https 代理
+      // see detail https://github.com/nodejitsu/node-http-proxy/blob/master/examples/http/proxy-http-to-https.js
+      agent: https.globalAgent,
+      headers: {
+        host: 'api.github.com'
+      }
+    }
   }
 }).listen(port, 'localhost', (err, result) => {
   if (err) {
