@@ -1,4 +1,4 @@
-import React, { Component, PropTypes } from 'React'
+import React, { Component, PropTypes } from 'react'
 
 export default class List extends Component {
   render () {

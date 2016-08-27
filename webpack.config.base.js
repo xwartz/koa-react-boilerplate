@@ -20,7 +20,12 @@ export default {
       'react-router-redux',
       'react-redux',
       'redux',
-      'redux-thunk'
+      'redux-thunk',
+      'redux-actions',
+      'lodash',
+      'normalizr',
+      'isomorphic-fetch',
+      'humps'
     ]
   },
 

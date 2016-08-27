@@ -10,6 +10,7 @@ export default function configureStore (preloadedState) {
     preloadedState,
     compose(
       applyMiddleware(thunk, api, createLogger()),
+      // redux 浏览器插件支持
       window.devToolsExtension ? window.devToolsExtension() : f => f
     )
   )
