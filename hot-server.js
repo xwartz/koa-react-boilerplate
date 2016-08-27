@@ -19,14 +19,15 @@ new WebpackDevServer(webpack(config), {
   },
   proxy: {
     '/api': {
-      target: 'https://api.github.com/',
-      pathRewrite: { '^/api': '' },
+      target: 'http://localhost:4000',
+      // target: 'https://api.github.com/',
+      // pathRewrite: { '^/api': '' },
       // http -> https 代理
       // see detail https://github.com/nodejitsu/node-http-proxy/blob/master/examples/http/proxy-http-to-https.js
-      agent: https.globalAgent,
-      headers: {
-        host: 'api.github.com'
-      }
+      // agent: https.globalAgent,
+      // headers: {
+      //   host: 'api.github.com'
+      // }
     }
   }
 }).listen(port, 'localhost', (err, result) => {
