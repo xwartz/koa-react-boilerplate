@@ -9,7 +9,8 @@ export default function configureStore (preloadedState) {
     rootReducer,
     preloadedState,
     compose(
-      applyMiddleware(thunk, api, createLogger())
+      applyMiddleware(thunk, api, createLogger()),
+      window.devToolsExtension ? window.devToolsExtension() : f => f
     )
   )
 
