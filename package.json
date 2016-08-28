@@ -7,9 +7,16 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "eslint client/**/*.js server/**/*.js",
     "hot-server": "node -r babel-register hot-server.js",
-    "build-render": "NODE_ENV=production node -r babel-register ./node_modules/.bin/webpack --config webpack.config.pro.js --progress --profile --colors",
     "server": "node -r babel-register server/index.js",
-    "build-server": "NODE_ENV=production node -r babel-register server/index.js"
+    "build-render": "NODE_ENV=production node -r babel-register ./node_modules/.bin/webpack --config webpack.config.pro.js --progress --profile --colors",
+    "build-server": "NODE_ENV=production node -r babel-register server/index.js",
+    "log": "pm2 logs",
+    "start": "pm2 start pm2.config.dev.json && npm run log",
+    "stop": "pm2 stop pm2.config.dev.json && pm2 delete pm2.config.dev.json",
+    "restart": "npm run stop && npm run start",
+    "deploy:start": "pm2 start pm2.config.pro.json && npm run log",
+    "deploy:stop": "pm2 stop pm2.config.pro.json && pm2 delete pm2.config.pro.json",
+    "deploy:restart": "npm run deploy:stop && npm run deploy:start"
   },
   "pre-commit": [
     "lint"
@@ -64,6 +71,7 @@
     "eslint-plugin-standard": "^2.0.0",
     "file-loader": "^0.9.0",
     "json-loader": "^0.5.4",
+    "pm2": "^1.1.3",
     "postcss-loader": "^0.10.1",
     "pre-commit": "^1.1.3",
     "precss": "^1.4.0",
