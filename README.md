@@ -20,15 +20,15 @@
 
 ### 静态检测
 
-#### `JavaScript`
+#### JavaScript
 
-[`eslint`](http://eslint.org/): 配置了 `pre-commit`，每次提交都会先做 `lint` 检测。
+[eslint](http://eslint.org/): 配置了 `pre-commit`，每次提交都会先做 `lint` 检测。
 
 避免开发时造成低级错误：Sublime 编辑器安装插件 [eslint](https://packagecontrol.io/search/eslint)
 
-#### `css`
+#### CSS
 
-[`precss`](https://github.com/jonathantneal/precss)：可以让你写 `scss` 的语法。
+[precss](https://github.com/jonathantneal/precss)：类似 `scss` 的语法。
 
 [postcss](https://github.com/postcss/postcss)：autoprefixer
 
@@ -40,7 +40,7 @@
 
 当然前端的选型比较自由，可以根据自己的熟悉程度更换
 
-### 构建工具 `Webpack`
+### 构建工具 Webpack
 
 #### 开发环境使用:
 
@@ -84,6 +84,20 @@ $ npm run hot-server
 $ npm run server
 ```
 
+### 更简单的使用 `pm2` 来管理
+
+```bash
+$ npm start
+```
+
+```bash
+$ npm stop
+```
+
+```bash
+$ npm restart
+```
+
 然后打开地址，`http://localhost:3000`
 
 demo 修改自 redux 的官网例子[real-world](https://github.com/reactjs/redux/tree/master/examples/real-world)
@@ -100,6 +114,20 @@ $ npm run build-render
 
 ```bash
 $ npm run build-server
+```
+
+### 更简单的使用 `pm2` 来管理
+
+```bash
+$ npm deploy:start
+```
+
+```bash
+$ npm deploy:stop
+```
+
+```bash
+$ npm deploy:restart
 ```
 
 # License
